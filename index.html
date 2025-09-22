@@ -17,23 +17,26 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: black;
+      color: white;
     }
     header img {
-      height: 60px;
+      height: 80px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: gold;
+      margin: 0;
     }
     nav a {
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: bold;
     }
-    .lang {
-      margin-left: 20px;
-    }
     .lang img {
-      width: 25px;
+      width: 20px;
       margin-left: 5px;
       cursor: pointer;
     }
@@ -42,7 +45,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 50px;
-      background: linear-gradient(135deg, #f8a5c2, #f78fb3);
+      background: linear-gradient(135deg, #f8a5c2, #e84393);
       color: white;
       flex-wrap: wrap;
     }
@@ -50,17 +53,17 @@
       max-width: 45%;
       min-width: 280px;
     }
-    .hero-text h1 {
+    .hero-text h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 40px;
+      font-size: 38px;
     }
     .hero-text p {
       font-size: 18px;
       margin: 15px 0;
     }
     .btn {
-      background-color: #e84393;
-      color: white;
+      background-color: gold;
+      color: black;
       padding: 12px 25px;
       text-decoration: none;
       border-radius: 30px;
@@ -82,6 +85,7 @@
     .services h2 {
       font-family: 'Playfair Display', serif;
       margin-bottom: 30px;
+      color: #e84393;
     }
     .cards {
       display: flex;
@@ -109,15 +113,35 @@
     .card:hover {
       transform: translateY(-5px);
     }
-    .about, .contact {
+    .about {
       padding: 50px 20px;
       text-align: center;
       background-color: #ffe3ed;
     }
+    .brands {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: black;
+      color: white;
+    }
+    .brand-strip img {
+      margin: 10px;
+      height: 50px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+      transition: transform 0.2s;
+    }
+    .brand-strip img:hover {
+      transform: scale(1.1);
+    }
+    .contact {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #f8a5c2;
+    }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #f78fb3;
+      background-color: black;
       color: white;
     }
   </style>
@@ -125,6 +149,7 @@
 <body>
   <header>
     <img src="assets/logo.png.png" alt="Beauté Logo">
+    <h1>BEAUTÉ</h1>
     <nav>
       <a href="#services">Servicios</a>
       <a href="#about">Sobre nosotros</a>
@@ -139,8 +164,8 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Beauté – Maquillaje & Belleza en Fez</h1>
-      <p>Maquillaje profesional, cuidados de la piel y todo para la mujer. Productos y servicios seleccionados para resaltar tu belleza.</p>
+      <h2>Beauté – Maquillaje & Belleza en Fez</h2>
+      <p>Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza.</p>
       <a href="#contact" class="btn">Recibir ofertas</a>
     </div>
     <div class="hero-img">
@@ -177,8 +202,21 @@
 
   <section class="about" id="about">
     <h2>Sobre Nosotros</h2>
-    <p>En Beauté creemos que la belleza es un arte. Nuestra misión es ofrecer maquillaje, productos de cuidado y accesorios de alta calidad para realzar lo mejor de ti.</p>
-    <p>Combinamos elegancia, profesionalismo y un toque moderno para que cada cliente disfrute de una experiencia única. Desde maquillaje para eventos, rutinas de skincare personalizadas, hasta accesorios que reflejan tu estilo.</p>
+    <p>En Beauté creemos que la belleza es un arte. Nuestra misión es ofrecer maquillaje, productos de cuidado y accesorios de alta calidad para realzar lo mejor de ti.  
+    Combinamos elegancia, profesionalismo y un toque moderno para que cada cliente disfrute de una experiencia única. Desde maquillaje para eventos, rutinas de skincare personalizadas, hasta accesorios que reflejan tu estilo.</p>
+  </section>
+
+  <section class="brands">
+    <h2>Marcas que amamos</h2>
+    <div class="brand-strip">
+      <img src="assets/brands/essence.png" alt="Essence">
+      <img src="assets/brands/Max-Factor.png" alt="Max Factor">
+      <img src="assets/brands/Maybelline.png" alt="Maybelline">
+      <img src="assets/brands/nyx.png" alt="NYX">
+      <img src="assets/brands/revlon.png" alt="Revlon">
+      <img src="assets/brands/Rimmel.png" alt="Rimmel">
+    </div>
+    <p class="brand-note">*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock.</p>
   </section>
 
   <section class="contact" id="contact">
@@ -190,7 +228,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Beauté - Todos los derechos reservados</p>
+    <p>© 2025 Beauté - Tu tienda de maquillaje en Fez</p>
   </footer>
 </body>
 </html>
