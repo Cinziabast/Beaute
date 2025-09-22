@@ -1,187 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beauté - Make Up & Beauty en Fez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --pink:#f78fb3;
-      --pink-2:#ffe3ed;
-      --ink:#222;
-      --muted:#666;
-      --shadow:0 10px 30px rgba(247,143,179,.18);
-      --line:#f2c7da;
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff0f6;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Roboto,system-ui;background:#fff7fb;color:var(--ink)}
-    header{
-      position:sticky;top:0;z-index:30;background:#fff;
-      border-bottom:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.03)
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header .wrap{max-width:1150px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
-    .brand img{height:56px;width:56px;border-radius:50%;border:2px solid #000;object-fit:cover}
-    .brand span{font-family:"Playfair Display",serif;font-size:22px;font-weight:700}
-    nav a{margin:0 12px;text-decoration:none;color:#333;font-weight:700}
-    nav a:hover{color:var(--pink)}
-    .lang img{width:22px;margin-left:6px}
-
-    .hero{background:linear-gradient(135deg,#ffd4e4,#fff);padding:46px 0}
-    .hero .wrap{max-width:1150px;margin:auto;padding:0 20px;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
-    .hero-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
-    .hero h1{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 10px}
-    .hero p{margin:0 0 16px;color:#444}
-    .btn{display:inline-block;background:var(--pink);color:#fff;border:none;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700}
-    .hero-img img{width:100%;border-radius:18px;box-shadow:var(--shadow);display:block}
-
-    .section{max-width:1150px;margin:auto;padding:44px 20px}
-    .section h2{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 18px}
-
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s}
-    .card:hover{transform:translateY(-4px)}
-    .card img{width:100%;height:180px;object-fit:cover;display:block}
-    .card .p{padding:15px}
-    .card h3{margin:6px 0;font-size:18px}
-    .card p{margin:0;color:#555;font-size:14px}
-
-    /* SOBRE NOSOTROS ELEGANTE */
-    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
-    .about .copy{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
-    .lead{font-size:16px;line-height:1.7;color:#3a3a3a;margin:0 0 12px}
-    .quote{
-      margin:14px 0;padding:14px 16px;border-left:4px solid var(--pink);
-      background:linear-gradient(90deg,#fff, #fff5f9);border-radius:10px;color:#333;font-style:italic
+    header img {
+      height: 60px;
     }
-    .bullets{margin:14px 0 0;padding-left:16px;color:#444}
-    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-    .chip{background:var(--pink-2);border:1px solid var(--line);padding:10px;border-radius:12px;text-align:center;font-weight:700;font-size:13px}
-
-    .collage{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .collage img{width:100%;height:140px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
-
-    .subscribe{margin-top:24px;background:#fff;border:1px dashed var(--line);border-radius:16px;padding:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .subscribe input{flex:1;min-width:240px;padding:12px 14px;border:1px solid var(--line);border-radius:10px}
-    .subscribe button{background:#000;color:#fff;border:none;border-radius:10px;padding:12px 16px;font-weight:700;cursor:pointer}
-
-    footer{border-top:1px solid var(--line);padding:22px 0;color:#666;text-align:center;margin-top:30px}
-
-    @media (max-width:980px){
-      .hero .wrap,.about{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .lang {
+      margin-left: 20px;
+    }
+    .lang img {
+      width: 25px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: linear-gradient(135deg, #f8a5c2, #f78fb3);
+      color: white;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 45%;
+      min-width: 280px;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+    }
+    .hero-text p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    .btn {
+      background-color: #e84393;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .hero-img img {
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .services {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      padding: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 280px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .about, .contact {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #ffe3ed;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f78fb3;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="wrap">
-      <a class="brand" href="#"><img src="assets/logo.png.png" alt="Logo Beauté"><span>Beauté</span></a>
-      <nav>
-        <a href="#services">Servicios</a>
-        <a href="#about">Sobre nosotros</a>
-        <a href="#ofertas" class="btn">Recibir ofertas</a>
-        <span class="lang">
-          <img src="https://flagcdn.com/w20/gb.png" alt="English">
-          <img src="https://flagcdn.com/w20/fr.png" alt="Français">
-          <img src="https://flagcdn.com/w20/ma.png" alt="العربية">
-        </span>
-      </nav>
-    </div>
+    <img src="assets/logo.png.png" alt="Beauté Logo">
+    <nav>
+      <a href="#services">Servicios</a>
+      <a href="#about">Sobre nosotros</a>
+      <a href="#contact">Contacto</a>
+      <span class="lang">
+        <img src="https://flagcdn.com/w20/gb.png" alt="English">
+        <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+        <img src="https://flagcdn.com/w20/ma.png" alt="العربية">
+      </span>
+    </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="wrap">
-      <div class="hero-card">
-        <h1>Beauté – Maquillaje & Belleza en Fez</h1>
-        <p>Maquillaje profesional, cuidado de la piel y todo para la mujer. Productos seleccionados, asesoría honesta y un estilo que resalta lo mejor de ti.</p>
-        <a href="#ofertas" class="btn">Recibir ofertas</a>
-      </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1583241801167-1d51f2fb8c1d?q=80&w=1200&auto=format&fit=crop" alt="Brochas de maquillaje elegantes">
-      </div>
+    <div class="hero-text">
+      <h1>Beauté – Maquillaje & Belleza en Fez</h1>
+      <p>Maquillaje profesional, cuidados de la piel y todo para la mujer. Productos y servicios seleccionados para resaltar tu belleza.</p>
+      <a href="#contact" class="btn">Recibir ofertas</a>
+    </div>
+    <div class="hero-img">
+      <img src="assets/hero.jpg" alt="Brochas de maquillaje elegantes">
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="services" class="section">
-    <h2>Nuestros servicios y categorías</h2>
+  <section class="services" id="services">
+    <h2>Nuestros Servicios</h2>
     <div class="cards">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=1200&auto=format&fit=crop" alt="Maquillaje">
-        <div class="p">
+      <div class="card">
+        <img src="assets/makeup.jpg" alt="Maquillaje">
+        <div class="card-content">
           <h3>Maquillaje Profesional</h3>
-          <p>Bases, labiales, sombras y brochas para un look impecable.</p>
+          <p>Para ocasiones especiales y uso diario.</p>
         </div>
-      </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1585238341986-1401f1e8d3d7?q=80&w=1200&auto=format&fit=crop" alt="Cuidado de la piel">
-        <div class="p">
+      </div>
+      <div class="card">
+        <img src="assets/skincare.jpg" alt="Cuidado de la piel">
+        <div class="card-content">
           <h3>Cuidado de la Piel</h3>
-          <p>Limpieza, hidratación y tratamientos para una piel luminosa y sana.</p>
+          <p>Productos para un rostro radiante y saludable.</p>
         </div>
-      </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1587049352846-4a222d1caa74?q=80&w=1200&auto=format&fit=crop" alt="Todo para la mujer">
-        <div class="p">
-          <h3>Todo para la mujer</h3>
-          <p>Accesorios, sets de regalo y asesoría de tonos personalizada.</p>
+      </div>
+      <div class="card">
+        <img src="assets/women.jpg" alt="Todo para la mujer">
+        <div class="card-content">
+          <h3>Todo para la Mujer</h3>
+          <p>Maquillaje, accesorios y más.</p>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS (ELEGANTE Y EXTENSO) -->
-  <section id="about" class="section about">
-    <div class="copy">
-      <h2>Sobre nosotros</h2>
-      <p class="lead">
-        En <strong>Beauté</strong> entendemos la belleza como un ritual propio. Por eso
-        combinamos <em>tendencia</em> y <em>cuidado</em> con productos seleccionados y una asesoría cercana.
-        Queremos que cada visita sea una experiencia amable, estética y efectiva.
-      </p>
-      <div class="quote">
-        “Nuestra promesa: productos que funcionan, tonos que favorecen y consejos que simplifican tu rutina”.
-      </div>
-      <ul class="bullets">
-        <li><strong>Maquillaje para eventos</strong> (bodas, fiestas, sesiones) con preparación de piel y fijación de larga duración.</li>
-        <li><strong>Rutinas de skincare</strong> a medida según objetivo: glow, control de sebo, calma o anti-edad.</li>
-        <li><strong>Asesoría de tonos</strong> para base y labial con pruebas higienizadas y luz neutra.</li>
-      </ul>
-      <div class="values">
-        <div class="chip">Calidad curada</div>
-        <div class="chip">Piel primero</div>
-        <div class="chip">Tonos reales</div>
-      </div>
-
-      <form id="ofertas" class="subscribe" method="POST" action="https://formspree.io/f/your-endpoint">
-        <strong>Recibe ofertas y novedades</strong>
-        <input type="email" name="email" placeholder="email@ejemplo.com" required>
-        <button type="submit">Suscribirme</button>
-        <small id="ok" style="display:none;color:#0a7b44">¡Gracias! Te hemos enviado un email de confirmación.</small>
-      </form>
-    </div>
-
-    <div class="collage">
-      <img src="https://images.unsplash.com/photo-1510414696678-2415ad8474aa?q=80&w=800&auto=format&fit=crop" alt="Detalle piel y brochas">
-      <img src="https://images.unsplash.com/photo-1518112166137-85f9979a43a5?q=80&w=800&auto=format&fit=crop" alt="Aplicación de maquillaje">
-      <img src="https://images.unsplash.com/photo-1520975922323-9ab2f3f0e1f3?q=80&w=800&auto=format&fit=crop" alt="Skincare minimal">
-      <img src="https://images.unsplash.com/photo-1582092724761-5d4e9a3a3c1a?q=80&w=800&auto=format&fit=crop" alt="Texturas de belleza">
-    </div>
+  <section class="about" id="about">
+    <h2>Sobre Nosotros</h2>
+    <p>En Beauté creemos que la belleza es un arte. Nuestra misión es ofrecer maquillaje, productos de cuidado y accesorios de alta calidad para realzar lo mejor de ti.</p>
+    <p>Combinamos elegancia, profesionalismo y un toque moderno para que cada cliente disfrute de una experiencia única. Desde maquillaje para eventos, rutinas de skincare personalizadas, hasta accesorios que reflejan tu estilo.</p>
   </section>
 
-  <!-- FOOTER -->
+  <section class="contact" id="contact">
+    <h2>Recibe nuestras ofertas</h2>
+    <form>
+      <input type="email" placeholder="Tu email" required style="padding:10px; border-radius:8px; border:1px solid #ccc; width:250px;">
+      <button type="submit" class="btn">Suscribirse</button>
+    </form>
+  </section>
+
   <footer>
-    © <span id="y"></span> Beauté • Fez — Todos los derechos reservados
+    <p>© 2025 Beauté - Todos los derechos reservados</p>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
-    const form=document.querySelector('#ofertas'); 
-    form?.addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='inline'});
-  </script>
 </body>
 </html>
