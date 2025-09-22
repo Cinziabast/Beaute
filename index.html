@@ -115,15 +115,35 @@
       html[dir="rtl"] nav{justify-content:center}
       html[dir="rtl"] .title-center{text-align:center}
     }
+
+    /* ========= ANIMACIONES EN SCROLL ========= */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal-on-scroll{
+        opacity:0;
+        transform:translateY(16px);
+        transition:opacity .7s ease, transform .7s ease;
+        will-change: opacity, transform;
+      }
+      .reveal-on-scroll.fade{ transform:none; }
+      .reveal-on-scroll.slide-up{ transform:translateY(22px); }
+      .reveal-on-scroll.zoom{ transform:scale(.98); }
+
+      .reveal-on-scroll.is-visible{
+        opacity:1;
+        transform:none;
+      }
+      /* pequeños escalados al entrar */
+      .reveal-on-scroll.zoom.is-visible{ transform:none; }
+    }
   </style>
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <div class="wrap">
-      <div class="brand"><img src="assets/logo.png.png" alt="Logo Beauté" loading="lazy"></div>
-      <h1 class="title-center">BEAUTÉ</h1>
-      <nav aria-label="main">
+      <div class="brand reveal-on-scroll fade"><img src="assets/logo.png.png" alt="Logo Beauté" loading="lazy"></div>
+      <h1 class="title-center reveal-on-scroll slide-up">BEAUTÉ</h1>
+      <nav aria-label="main" class="reveal-on-scroll fade">
         <a href="#services" data-i18n="nav.services">Servicios</a>
         <a href="#about" data-i18n="nav.about">Sobre nosotros</a>
         <a href="#contact" data-i18n="nav.contact">Contacto</a>
@@ -140,12 +160,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-grid">
-      <div>
+      <div class="reveal-on-scroll slide-up">
         <h2 data-i18n="hero.title">Beauté – Maquillaje & Belleza en Fez</h2>
         <p data-i18n="hero.tagline">Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza.</p>
         <a class="btn" href="#contact" data-i18n="cta.getOffers">Recibir ofertas</a>
       </div>
-      <div class="hero-img">
+      <div class="hero-img reveal-on-scroll zoom">
         <img
           src="assets/hero.jpg"
           srcset="assets/hero.jpg 1200w, assets/hero.jpg 800w, assets/hero.jpg 480w"
@@ -159,9 +179,9 @@
 
   <!-- SERVICIOS -->
   <section id="services" class="section">
-    <h3 data-i18n="services.title">Nuestros Servicios</h3>
+    <h3 class="reveal-on-scroll fade" data-i18n="services.title">Nuestros Servicios</h3>
     <div class="cards">
-      <article class="card">
+      <article class="card reveal-on-scroll slide-up">
         <img src="assets/makeup.jpg" alt="Maquillaje" loading="lazy">
         <div class="p">
           <h4 data-i18n="services.makeup.title">Maquillaje Profesional</h4>
@@ -169,7 +189,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal-on-scroll slide-up">
         <img src="assets/skincare.jpg" alt="Cuidado de la piel" loading="lazy">
         <div class="p">
           <h4 data-i18n="services.skincare.title">Cuidado de la Piel</h4>
@@ -177,7 +197,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal-on-scroll slide-up">
         <img src="assets/women.jpg" alt="Todo para la mujer" loading="lazy">
         <div class="p">
           <h4 data-i18n="services.women.title">Todo para la Mujer</h4>
@@ -189,22 +209,22 @@
 
   <!-- MARCAS -->
   <section class="brands-band" aria-labelledby="brandsTitle">
-    <h3 id="brandsTitle" data-i18n="brands.title">Marcas que amamos</h3>
+    <h3 id="brandsTitle" class="reveal-on-scroll fade" data-i18n="brands.title">Marcas que amamos</h3>
     <div class="brand-strip">
-      <img src="assets/brands/essence.png" alt="Essence" loading="lazy">
-      <img src="assets/brands/Max-Factor.png" alt="Max Factor" loading="lazy">
-      <img src="assets/brands/Maybelline.png" alt="Maybelline" loading="lazy">
-      <img src="assets/brands/nyx.png" alt="NYX" loading="lazy">
-      <img src="assets/brands/revlon.png" alt="Revlon" loading="lazy">
-      <img src="assets/brands/Rimmel.png" alt="Rimmel" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/essence.png" alt="Essence" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/Max-Factor.png" alt="Max Factor" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/Maybelline.png" alt="Maybelline" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/nyx.png" alt="NYX" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/revlon.png" alt="Revlon" loading="lazy">
+      <img class="reveal-on-scroll zoom" src="assets/brands/Rimmel.png" alt="Rimmel" loading="lazy">
     </div>
-    <p class="brand-note" data-i18n="brands.note">*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock.</p>
+    <p class="brand-note reveal-on-scroll fade" data-i18n="brands.note">*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock.</p>
   </section>
 
   <!-- NEWSLETTER -->
   <section id="contact" class="cta">
-    <h3 data-i18n="newsletter.title">Recibe nuestras ofertas</h3>
-    <form onsubmit="event.preventDefault(); alert(currentT('newsletter.thanks')); ">
+    <h3 class="reveal-on-scroll fade" data-i18n="newsletter.title">Recibe nuestras ofertas</h3>
+    <form class="reveal-on-scroll slide-up" onsubmit="event.preventDefault(); alert(currentT('newsletter.thanks')); ">
       <input type="email" required placeholder="email@example.com" data-i18n-placeholder="newsletter.placeholder" />
       <button type="submit" class="btn" data-i18n="newsletter.subscribe">Suscribirse</button>
     </form>
@@ -259,7 +279,7 @@
             skincare:{title:"العناية بالبشرة",desc:"تنظيف، ترطيب وعلاجات لبشرة صحية ومشرقة."},
             women:{title:"كل ما يخص المرأة",desc:"إكسسوارات، هدايا واستشارات لاختيار الدرجات المناسبة."}},
           brands:{title:"علامات نحبها",note:"*نعمل مع علامات مختارة بعناية. التوفر يعتمد على الموسم والمخزون."},
-          newsletter:{title:"استلم عروضنا",placeholder:"بريدك الإلكتروني",subscribe:"اشترك",thanks:"شكرًا لك! سنرسل إليك عروضنا."},
+          newsletter:{title:"استلم عروضنا",placeholder:"بريدك الإلكتروني",subscribe:"اشترك",thanks:"شكراً لك! سنرسل إليك عروضنا."},
           footer:{feztag:"متجرك للمكياج في فاس"}}
     };
 
@@ -285,12 +305,34 @@
       localStorage.setItem('beaute_lang', lang);
     }
 
+    // Banderas: cambio de idioma
     document.querySelectorAll('.flag-btn').forEach(btn=>{
       btn.addEventListener('click', ()=>applyI18n(btn.dataset.lang));
     });
 
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Idioma inicial
     applyI18n(localStorage.getItem('beaute_lang') || 'es');
+
+    // ========= IntersectionObserver para animaciones =========
+    const prefersNoMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!prefersNoMotion){
+      const io = new IntersectionObserver((entries, obs)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.15});
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el=>io.observe(el));
+    } else {
+      // Si el usuario prefiere reducir movimiento: mostrar todo sin animar
+      document.querySelectorAll('.reveal-on-scroll').forEach(el=>el.classList.add('is-visible'));
+    }
   </script>
 </body>
 </html>
