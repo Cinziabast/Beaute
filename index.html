@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauté - Make Up & Beauty</title>
+  <style>
+    body {font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#ffe6f2; color:#333;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:10px 30px; background:#fff;}
+    header img {height:60px;}
+    nav {display:flex; gap:15px; align-items:center;}
+    nav a {text-decoration:none; color:#333; font-weight:500;}
+    .flags img {width:24px; cursor:pointer; margin-left:8px;}
+    .hero {text-align:center; padding:80px 20px; background:linear-gradient(135deg, #ff99cc, #ffb3d9); color:#fff;}
+    .hero h1 {font-size:48px; margin:0;}
+    .hero p {font-size:18px; margin:15px 0;}
+    .hero button {padding:15px 30px; background:#000; color:#fff; border:none; border-radius:30px; font-size:16px; cursor:pointer;}
+    .section {padding:60px 20px; max-width:1200px; margin:auto;}
+    .services {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+    .card {background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .card h3 {margin:15px 0 10px;}
+    .subscribe {text-align:center; background:#fff0f6; padding:50px 20px; border-radius:12px;}
+    .subscribe input {padding:12px; width:250px; border:1px solid #ccc; border-radius:8px;}
+    .subscribe button {padding:12px 25px; margin-left:10px; border:none; background:#e60073; color:#fff; border-radius:8px; cursor:pointer;}
+    footer {text-align:center; padding:20px; background:#fff; margin-top:50px; font-size:14px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="Beauté Logo">
+  <nav>
+    <a href="#services" data-lang="services">Servicios</a>
+    <a href="#about" data-lang="about">Sobre nosotros</a>
+    <a href="#contact" data-lang="contact">Contacto</a>
+    <div class="flags">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English" onclick="changeLang('en')">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français" onclick="changeLang('fr')">
+      <img src="https://flagcdn.com/w20/ma.png" alt="العربية" onclick="changeLang('ar')">
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 data-lang="hero-title">Beauté - Make Up & Beauty en Fez</h1>
+  <p data-lang="hero-sub">Resalta tu belleza con nuestros productos y servicios profesionales.</p>
+  <button data-lang="hero-cta">Descubre más</button>
+</section>
+
+<section id="services" class="section">
+  <h2 data-lang="services">Nuestros Servicios</h2>
+  <div class="services">
+    <div class="card">
+      <h3 data-lang="makeup">Maquillaje Profesional</h3>
+      <p data-lang="makeup-desc">Para ocasiones especiales y uso diario.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="skincare">Cuidado de la Piel</h3>
+      <p data-lang="skincare-desc">Productos para un rostro radiante y saludable.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="women">Todo para la Mujer</h3>
+      <p data-lang="women-desc">Maquillaje, accesorios y más.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2 data-lang="about">Sobre Nosotros</h2>
+  <p data-lang="about-desc">En Beauté creemos que la belleza es un arte. Nuestra misión es ofrecer maquillaje, productos de cuidado y accesorios de alta calidad para resaltar lo mejor de ti.</p>
+</section>
+
+<section id="contact" class="section subscribe">
+  <h2 data-lang="cta">Recibe nuestras ofertas</h2>
+  <input type="email" placeholder="Tu email" required>
+  <button data-lang="subscribe">Suscribirse</button>
+</section>
+
+<footer>
+  <p>© 2025 Beauté - Fez, Marruecos</p>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    services: "Services",
+    about: "About",
+    contact: "Contact",
+    "hero-title": "Beauté - Make Up & Beauty in Fez",
+    "hero-sub": "Highlight your beauty with our professional products and services.",
+    "hero-cta": "Discover More",
+    makeup: "Professional Make-Up",
+    "makeup-desc": "For special occasions and daily use.",
+    skincare: "Skin Care",
+    "skincare-desc": "Products for a radiant, healthy face.",
+    women: "Everything for Women",
+    "women-desc": "Make-up, accessories and more.",
+    "about-desc": "At Beauté we believe beauty is an art. Our mission is to offer high-quality make-up, skincare and accessories to bring out the best in you.",
+    cta: "Receive our offers",
+    subscribe: "Subscribe"
+  },
+  fr: {
+    services: "Services",
+    about: "À propos",
+    contact: "Contact",
+    "hero-title": "Beauté - Maquillage & Beauté à Fès",
+    "hero-sub": "Mettez en valeur votre beauté avec nos produits et services professionnels.",
+    "hero-cta": "Découvrir",
+    makeup: "Maquillage Professionnel",
+    "makeup-desc": "Pour les occasions spéciales et l’usage quotidien.",
+    skincare: "Soins de la Peau",
+    "skincare-desc": "Des produits pour un visage éclatant et sain.",
+    women: "Tout pour la Femme",
+    "women-desc": "Maquillage, accessoires et plus encore.",
+    "about-desc": "Chez Beauté, nous croyons que la beauté est un art. Notre mission est d’offrir du maquillage, des soins et des accessoires de haute qualité pour révéler le meilleur de vous-même.",
+    cta: "Recevez nos offres",
+    subscribe: "S'abonner"
+  },
+  ar: {
+    services: "الخدمات",
+    about: "معلومات عنا",
+    contact: "اتصل بنا",
+    "hero-title": "بيوتي - مكياج وجمال في فاس",
+    "hero-sub": "أبرزي جمالك مع منتجاتنا وخدماتنا المهنية.",
+    "hero-cta": "اكتشفي المزيد",
+    makeup: "مكياج احترافي",
+    "makeup-desc": "للمناسبات الخاصة والاستخدام اليومي.",
+    skincare: "العناية بالبشرة",
+    "skincare-desc": "منتجات لبشرة مشرقة وصحية.",
+    women: "كل ما تحتاجه المرأة",
+    "women-desc": "مكياج، إكسسوارات والمزيد.",
+    "about-desc": "في بيوتي نؤمن أن الجمال فن. مهمتنا هي تقديم مكياج ومنتجات عناية وإكسسوارات عالية الجودة لإبراز أجمل ما فيك.",
+    cta: "اشتركي لتصلك عروضنا",
+    subscribe: "اشتركي"
+  }
+};
+
+function changeLang(lang) {
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    const key = el.getAttribute("data-lang");
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+}
+</script>
+
+</body>
+</html>
