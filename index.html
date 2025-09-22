@@ -3,81 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BEAUTÉ — Make Up & Beauty en Fez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <title>BEAUTÉ — Maquillaje & Belleza en Fez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --pink:#ffe6f3;
-      --fuchsia:#d63384;
-      --black:#0b0b0c;
-      --gold:#d4af37;
-      --blush:#fff0f6;
-      --line:#f2c7da;
+      --pink:#fff0f6;
+      --fuchsia:#e84393;
+      --black:#000;
+      --gold:#ffd34e;
+      --container:1180px;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Roboto,system-ui;background:var(--blush);color:#222}
+    body{margin:0;font-family:Roboto,system-ui;background:var(--pink);color:#222}
 
-    /* HEADER */
-    header{position:sticky;top:0;z-index:50;background:var(--black);color:#fff}
-    .wrap{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
-    .brand img{height:110px;width:110px;object-fit:cover;border-radius:50%;border:3px solid #fff}
-    .title{flex:1;text-align:center;font-family:"Playfair Display",serif;font-size:30px;letter-spacing:.06em;margin:0;color:var(--gold)}
-    nav{display:flex;align-items:center;gap:12px}
-    nav a{color:#fff;text-decoration:none;font-weight:700}
-    nav a:hover{color:var(--gold)}
-    .flags{display:flex;align-items:center;gap:6px;margin-left:6px}
-    .flag{background:none;border:none;cursor:pointer;padding:0;line-height:0}
-    .flag img{width:16px;height:auto;display:block;filter:drop-shadow(0 0 2px rgba(0,0,0,.35))}
+    /* ============ HEADER ============ */
+    header{background:var(--black);color:#fff;position:sticky;top:0;z-index:50}
+    .wrap{max-width:var(--container);margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:96px;width:96px;border-radius:50%;object-fit:cover}
+    .title-center{
+      flex:1;text-align:center;margin:0;
+      font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.08em;
+      font-size:42px;color:var(--gold);
+    }
+    nav{display:flex;align-items:center;gap:14px}
+    nav a{font-weight:700;text-decoration:none;color:#fff;opacity:.95}
+    nav a:hover{opacity:1}
+    .lang{display:flex;align-items:center;gap:6px;margin-left:8px}
+    .flag-btn{background:transparent;border:none;padding:0;cursor:pointer;line-height:0}
+    .flag-btn img{width:18px;height:auto;display:block}
 
-    /* HERO */
-    .hero{background:linear-gradient(135deg,#f3a1c8,#e35e9c);color:#fff}
-    .hero-grid{max-width:1180px;margin:auto;padding:60px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
-    .hero h2{font-family:"Playfair Display",serif;font-size:44px;margin:0 0 10px}
-    .hero p{font-size:18px;margin:0 0 14px}
-    .btn{display:inline-block;background:linear-gradient(90deg,var(--gold),#ffd86a);color:#000;font-weight:800;text-decoration:none;border:none;border-radius:999px;padding:12px 22px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.22)}
+    /* ============ HERO ============ */
+    .hero{background:linear-gradient(135deg,#ff5fa2 0%, #e84393 45%, #cc2b7a 100%);color:#fff;padding:56px 0}
+    .hero-grid{max-width:var(--container);margin:auto;padding:0 22px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .hero h2{font-family:"Playfair Display",serif;font-size:44px;margin:0 0 12px}
+    .hero p{margin:0 0 16px;font-size:18px}
+    .btn{display:inline-block;margin-top:14px;background:var(--gold);color:#111;font-weight:800;border:none;border-radius:999px;padding:12px 22px;cursor:pointer;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
     .hero-img img{width:100%;max-height:360px;object-fit:cover;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 
-    /* SECTIONS */
-    .section{max-width:1180px;margin:auto;padding:46px 22px}
+    /* ============ SECCIONES ============ */
+    .section{max-width:var(--container);margin:auto;padding:46px 22px}
     .section h3{font-family:"Playfair Display",serif;font-size:30px;margin:0 0 20px;color:#111}
 
-    /* CARDS */
+    /* Servicios */
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.12);transition:transform .2s ease}
-    .card:hover{transform:translateY(-6px)}
+    .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.12)}
     .card img{width:100%;height:190px;object-fit:cover}
     .card .p{padding:16px}
-    .card h4{margin:6px 0 6px;font-size:18px}
-    .muted{color:#555;font-size:14px;margin:0}
+    .card h4{margin:6px 0 8px;font-size:18px}
+    .card p{margin:0 0 2px;color:#555;font-size:14px}
 
-    /* BRANDS on dark */
-    .brands{background:var(--black);color:#fff;text-align:center;padding:40px 22px}
-    .brands h3{color:var(--gold)}
-    .brand-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:6px}
-    .brand-strip img{
-      height:50px;background:#fff;border-radius:10px;padding:6px 10px;
-      box-shadow:0 6px 14px rgba(0,0,0,.35)
+    /* Marcas (banda) */
+    .brands-band{background:linear-gradient(135deg,#0b0006,#8b2a58);color:#fff;text-align:center;padding:36px 22px}
+    .brands-band h3{color:var(--gold)}
+    .brand-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:10px}
+    .brand-strip img{height:56px;background:#fff;border-radius:8px;padding:6px 12px;box-shadow:0 6px 14px rgba(0,0,0,.25);transition:transform .2s}
+    .brand-strip img:hover{transform:scale(1.07)}
+    .brand-note{margin-top:10px;font-size:14px;opacity:.9}
+
+    /* Newsletter */
+    .cta{background:#f7a1c8;text-align:center;padding:34px 22px}
+    .cta form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .cta input{padding:12px 14px;border-radius:10px;border:1px solid #ddd;min-width:260px}
+
+    /* Footer */
+    footer{background:var(--black);color:#fff;text-align:center;padding:18px}
+    img{max-width:100%;height:auto}
+
+    /* ===== Tipografías fluidas ===== */
+    .title-center{ font-size:clamp(28px,4.2vw,42px); }
+    .hero h2{ font-size:clamp(26px,6vw,44px); }
+    .section h3{ font-size:clamp(20px,4.4vw,30px); }
+
+    /* ===== Laptop / Pequeño escritorio (≤1199px) ===== */
+    @media (max-width:1199.98px){
+      .brand img{height:88px;width:88px}
+      .hero{padding:52px 0}
+      .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     }
-    .brand-note{margin-top:10px;color:#ddd;font-size:13px}
 
-    /* ABOUT + CTA */
-    .about{background:#ffe9f3;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
-    .cta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-    .cta input{flex:1;min-width:260px;border:1px solid #ddd;border-radius:12px;padding:12px 14px}
+    /* ===== Tablet (iPad) (≤991px) ===== */
+    @media (max-width:991.98px){
+      .brand img{height:76px;width:76px}
+      nav{gap:12px;flex-wrap:wrap}
+      .hero{padding:44px 0}
+      .hero-grid{grid-template-columns:1fr;row-gap:18px}
+      .hero-img{order:2}
+      .hero-grid>div:first-child{order:1}
+      .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+      .brand-strip img{height:50px;padding:6px 10px}
+      .cta form{justify-content:center}
+    }
 
-    /* FOOTER */
-    footer{background:var(--black);color:#fff;text-align:center;padding:18px;margin-top:24px}
+    /* ===== Móvil (Android/iPhone) (≤767px) ===== */
+    @media (max-width:767.98px){
+      .wrap{flex-wrap:wrap;row-gap:8px}
+      .brand{order:1}
+      .title-center{order:2;width:100%;text-align:center}
+      nav{order:3;width:100%;justify-content:center;gap:10px}
+      .hero{padding:32px 0}
+      .btn{padding:12px 18px;font-size:15px}
+      .cards{grid-template-columns:1fr;gap:14px}
+      .brand-strip{gap:12px}
+      .brand-strip img{height:42px;padding:6px 8px}
+      .cta form{flex-direction:column;align-items:stretch;gap:10px}
+      .cta input,.cta .btn{width:100%}
+    }
 
-    /* RTL (árabe) */
-    .rtl .wrap{flex-direction:row-reverse}
-    .rtl .title{letter-spacing:0}
-    .rtl .hero-grid{grid-template-columns: .8fr 1.2fr}
-    .rtl .cards{direction:rtl}
-    .rtl p,.rtl h2,.rtl h3,.rtl h4,.rtl nav{text-align:right}
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
-      .rtl .hero-grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
+    /* RTL (árabe) en móvil */
+    @media (max-width:767.98px){
+      html[dir="rtl"] nav{justify-content:center}
+      html[dir="rtl"] .title-center{text-align:center}
     }
   </style>
 </head>
@@ -85,18 +121,18 @@
   <!-- HEADER -->
   <header>
     <div class="wrap">
-      <div class="brand"><img src="assets/logo.png.png" alt="Logo Beauté"></div>
-      <h1 class="title">BEAUTÉ</h1>
-      <nav>
+      <div class="brand"><img src="assets/logo.png.png" alt="Logo Beauté" loading="lazy"></div>
+      <h1 class="title-center">BEAUTÉ</h1>
+      <nav aria-label="main">
         <a href="#services" data-i18n="nav.services">Servicios</a>
         <a href="#about" data-i18n="nav.about">Sobre nosotros</a>
         <a href="#contact" data-i18n="nav.contact">Contacto</a>
-        <div class="flags" aria-label="Cambiar idioma">
-          <button class="flag" data-lang="en" title="English"><img src="https://flagcdn.com/w20/gb.png" alt="English"></button>
-          <button class="flag" data-lang="fr" title="Français"><img src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
-          <button class="flag" data-lang="ar" title="العربية"><img src="https://flagcdn.com/w20/ma.png" alt="العربية"></button>
-          <button class="flag" data-lang="es" title="Español"><img src="https://flagcdn.com/w20/es.png" alt="Español"></button>
-        </div>
+        <span class="lang" aria-label="Cambiar idioma">
+          <button class="flag-btn" data-lang="en" title="English"><img src="https://flagcdn.com/w20/gb.png" alt="English"></button>
+          <button class="flag-btn" data-lang="fr" title="Français"><img src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
+          <button class="flag-btn" data-lang="ar" title="العربية"><img src="https://flagcdn.com/w20/ma.png" alt="العربية"></button>
+          <button class="flag-btn" data-lang="es" title="Español"><img src="https://flagcdn.com/w20/es.png" alt="Español"></button>
+        </span>
       </nav>
     </div>
   </header>
@@ -106,11 +142,17 @@
     <div class="hero-grid">
       <div>
         <h2 data-i18n="hero.title">Beauté – Maquillaje & Belleza en Fez</h2>
-        <p data-i18n="hero.tag">Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza.</p>
-        <a href="#contact" class="btn" data-i18n="cta.offers">Recibir ofertas</a>
+        <p data-i18n="hero.tagline">Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza.</p>
+        <a class="btn" href="#contact" data-i18n="cta.getOffers">Recibir ofertas</a>
       </div>
       <div class="hero-img">
-        <img src="assets/hero.jpg" alt="Brochas de maquillaje elegantes">
+        <img
+          src="assets/hero.jpg"
+          srcset="assets/hero.jpg 1200w, assets/hero.jpg 800w, assets/hero.jpg 480w"
+          sizes="(max-width: 767px) 100vw, (max-width: 991px) 90vw, 40vw"
+          alt="Brochas de maquillaje elegantes"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -120,169 +162,135 @@
     <h3 data-i18n="services.title">Nuestros Servicios</h3>
     <div class="cards">
       <article class="card">
-        <img src="assets/makeup.jpg" alt="Maquillaje">
+        <img src="assets/makeup.jpg" alt="Maquillaje" loading="lazy">
         <div class="p">
-          <h4 data-i18n="services.m1.title">Maquillaje Profesional</h4>
-          <p class="muted" data-i18n="services.m1.desc">Looks para eventos y día a día, con preparación de piel y fijación de larga duración.</p>
+          <h4 data-i18n="services.makeup.title">Maquillaje Profesional</h4>
+          <p data-i18n="services.makeup.desc">Looks para eventos y día a día, con preparación de piel y fijación de larga duración.</p>
         </div>
       </article>
 
       <article class="card">
-        <img src="assets/skincare.jpg" alt="Cuidado de la piel">
+        <img src="assets/skincare.jpg" alt="Cuidado de la piel" loading="lazy">
         <div class="p">
-          <h4 data-i18n="services.m2.title">Cuidado de la Piel</h4>
-          <p class="muted" data-i18n="services.m2.desc">Rutinas de limpieza, hidratación y tratamientos para una piel luminosa y sana.</p>
+          <h4 data-i18n="services.skincare.title">Cuidado de la Piel</h4>
+          <p data-i18n="services.skincare.desc">Rutinas de limpieza, hidratación y tratamientos para una piel luminosa y sana.</p>
         </div>
       </article>
 
       <article class="card">
-        <img src="assets/women.jpg" alt="Todo para la mujer">
+        <img src="assets/women.jpg" alt="Todo para la mujer" loading="lazy">
         <div class="p">
-          <h4 data-i18n="services.m3.title">Todo para la Mujer</h4>
-          <p class="muted" data-i18n="services.m3.desc">Accesorios, cofres regalo y asesoría de tonos personalizada.</p>
+          <h4 data-i18n="services.women.title">Todo para la Mujer</h4>
+          <p data-i18n="services.women.desc">Accesorios, cofres regalo y asesoría de tonos personalizada.</p>
         </div>
       </article>
     </div>
   </section>
 
   <!-- MARCAS -->
-  <section class="brands">
-    <h3 data-i18n="brands.title">Marcas que amamos</h3>
+  <section class="brands-band" aria-labelledby="brandsTitle">
+    <h3 id="brandsTitle" data-i18n="brands.title">Marcas que amamos</h3>
     <div class="brand-strip">
-      <img src="assets/brands/essence.png" alt="Essence">
-      <img src="assets/brands/Max-Factor.png" alt="Max Factor">
-      <img src="assets/brands/Maybelline.png" alt="Maybelline">
-      <img src="assets/brands/nyx.png" alt="NYX">
-      <img src="assets/brands/revlon.png" alt="Revlon">
-      <img src="assets/brands/Rimmel.png" alt="Rimmel">
+      <img src="assets/brands/essence.png" alt="Essence" loading="lazy">
+      <img src="assets/brands/Max-Factor.png" alt="Max Factor" loading="lazy">
+      <img src="assets/brands/Maybelline.png" alt="Maybelline" loading="lazy">
+      <img src="assets/brands/nyx.png" alt="NYX" loading="lazy">
+      <img src="assets/brands/revlon.png" alt="Revlon" loading="lazy">
+      <img src="assets/brands/Rimmel.png" alt="Rimmel" loading="lazy">
     </div>
     <p class="brand-note" data-i18n="brands.note">*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock.</p>
   </section>
 
-  <!-- SOBRE NOSOTROS + CTA -->
-  <section id="about" class="section">
-    <div class="about">
-      <h3 data-i18n="about.title">Sobre nosotros</h3>
-      <p data-i18n="about.p1">En Beauté creemos que la belleza es un ritual personal. Combinamos tendencia y cuidado con asesoría cercana para ayudarte a brillar con tu propio estilo.</p>
-      <p data-i18n="about.p2">Estamos en Fez, Marruecos. Te acompañamos con recomendaciones honestas, selección de productos de alta calidad y un ambiente que inspira.</p>
-
-      <form id="contact" class="cta" onsubmit="event.preventDefault(); alert(msgSubscribed[currentLang] || '¡Gracias!');">
-        <input type="email" required placeholder="email@example.com" aria-label="email">
-        <button class="btn" type="submit" data-i18n="cta.subscribe">Suscribirme</button>
-      </form>
-    </div>
+  <!-- NEWSLETTER -->
+  <section id="contact" class="cta">
+    <h3 data-i18n="newsletter.title">Recibe nuestras ofertas</h3>
+    <form onsubmit="event.preventDefault(); alert(currentT('newsletter.thanks')); ">
+      <input type="email" required placeholder="email@example.com" data-i18n-placeholder="newsletter.placeholder" />
+      <button type="submit" class="btn" data-i18n="newsletter.subscribe">Suscribirse</button>
+    </form>
   </section>
 
   <footer>
-    <span data-i18n="footer">© 2025 BEAUTÉ • Fez, Marruecos — Todos los derechos reservados</span>
+    <span id="year"></span> © <strong>BEAUTÉ</strong> — <span data-i18n="footer.feztag">Tu tienda de maquillaje en Fez</span>
   </footer>
 
   <script>
-    /* ======= I18N STRINGS ======= */
+    /* ================= I18N STRINGS ================= */
     const i18n = {
-      es: {
-        nav:{services:"Servicios",about:"Sobre nosotros",contact:"Contacto"},
-        hero:{title:"Beauté – Maquillaje & Belleza en Fez",
-              tag:"Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza."},
-        cta:{offers:"Recibir ofertas",subscribe:"Suscribirme"},
-        services:{
-          title:"Nuestros Servicios",
-          m1:{title:"Maquillaje Profesional",desc:"Looks para eventos y día a día, con preparación de piel y fijación de larga duración."},
-          m2:{title:"Cuidado de la Piel",desc:"Rutinas de limpieza, hidratación y tratamientos para una piel luminosa y sana."},
-          m3:{title:"Todo para la Mujer",desc:"Accesorios, cofres regalo y asesoría de tonos personalizada."}
-        },
-        brands:{title:"Marcas que amamos",note:"*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock."},
-        about:{title:"Sobre nosotros",
-               p1:"En Beauté creemos que la belleza es un ritual personal. Combinamos tendencia y cuidado con asesoría cercana para ayudarte a brillar con tu propio estilo.",
-               p2:"Estamos en Fez, Marruecos. Te acompañamos con recomendaciones honestas, selección de productos de alta calidad y un ambiente que inspira."},
-        footer:"© 2025 BEAUTÉ • Fez, Marruecos — Todos los derechos reservados"
-      },
-      en: {
-        nav:{services:"Services",about:"About us",contact:"Contact"},
-        hero:{title:"Beauté – Makeup & Beauty in Fez",
-              tag:"All the makeup of your dreams, at your store in Fez. Curated products and professional services to highlight your beauty."},
-        cta:{offers:"Get offers",subscribe:"Subscribe"},
-        services:{
-          title:"Our Services",
-          m1:{title:"Professional Makeup",desc:"Event and everyday looks, with skin prep and long-lasting hold."},
-          m2:{title:"Skin Care",desc:"Cleansing, hydration and treatments for a glowing, healthy skin."},
-          m3:{title:"Everything for Women",desc:"Accessories, gift sets and personalized shade advice."}
-        },
-        brands:{title:"Brands we love",note:"*We work with carefully selected brands. Availability may vary by season and stock."},
-        about:{title:"About us",
-               p1:"At Beauté, we believe beauty is a personal ritual. We blend trends and care with close advice to help you shine in your own style.",
-               p2:"We are in Fez, Morocco. Honest recommendations, high-quality products and an inspiring atmosphere."},
-        footer:"© 2025 BEAUTÉ • Fez, Morocco — All rights reserved"
-      },
-      fr: {
-        nav:{services:"Services",about:"À propos",contact:"Contact"},
-        hero:{title:"Beauté – Maquillage & Beauté à Fès",
-              tag:"Tout le maquillage de vos rêves, dans votre boutique à Fès. Produits sélectionnés et services professionnels pour sublimer votre beauté."},
-        cta:{offers:"Recevoir des offres",subscribe:"M’inscrire"},
-        services:{
-          title:"Nos services",
-          m1:{title:"Maquillage professionnel",desc:"Looks pour événements et quotidien, avec préparation de la peau et tenue longue durée."},
-          m2:{title:"Soin de la peau",desc:"Nettoyage, hydratation et traitements pour une peau lumineuse et saine."},
-          m3:{title:"Tout pour la femme",desc:"Accessoires, coffrets cadeaux et conseil personnalisé des teintes."}
-        },
-        brands:{title:"Marques que nous aimons",note:"*Nous travaillons avec des marques soigneusement sélectionnées. Disponibilité selon la saison et le stock."},
-        about:{title:"À propos",
-               p1:"Chez Beauté, la beauté est un rituel personnel. Nous allions tendance et soin avec un conseil proche pour vous aider à briller à votre façon.",
-               p2:"Nous sommes à Fès, Maroc. Recommandations honnêtes, produits de haute qualité et une atmosphère inspirante."},
-        footer:"© 2025 BEAUTÉ • Fès, Maroc — Tous droits réservés"
-      },
-      ar: {
-        nav:{services:"الخدمات",about:"من نحن",contact:"اتصل بنا"},
-        hero:{title:"بيوتيه – مكياج وجمال في فاس",
-              tag:"كل مكياج أحلامك في متجرك بفاس. منتجات مختارة وخدمات احترافية لإبراز جمالك."},
-        cta:{offers:"استلام العروض",subscribe:"اشترك"},
-        services:{
-          title:"خدماتنا",
-          m1:{title:"مكياج احترافي",desc:"إطلالات للمناسبات واليوميات مع تهيئة للبشرة وثبات طويل."},
-          m2:{title:"العناية بالبشرة",desc:"تنظيف وترطيب وعلاجات لبشرة صحية ومشرقة."},
-          m3:{title:"كل ما يخص المرأة",desc:"إكسسوارات وصناديق هدايا واستشارة درجات مخصصة."}
-        },
-        brands:{title:"علامات نحبّها",note:"*نعمل مع علامات مختارة بعناية. التوفر يختلف حسب الموسم والمخزون."},
-        about:{title:"من نحن",
-               p1:"في بيوتيه نؤمن أن الجمال طقس شخصي. نمزج الموضة بالعناية مع استشارة قريبة لتتألقي بأسلوبك الخاص.",
-               p2:"نحن في فاس، المغرب. توصيات صادقة ومنتجات عالية الجودة وأجواء ملهمة."},
-        footer:"© 2025 بيوتيه • فاس، المغرب — جميع الحقوق محفوظة"
-      }
+      es:{nav:{services:"Servicios",about:"Sobre nosotros",contact:"Contacto"},
+          hero:{title:"Beauté – Maquillaje & Belleza en Fez",
+                tagline:"Todo el maquillaje de tus sueños, en tu tienda en Fez. Productos seleccionados y servicios profesionales para resaltar tu belleza."},
+          cta:{getOffers:"Recibir ofertas"},
+          services:{title:"Nuestros Servicios",
+            makeup:{title:"Maquillaje Profesional",desc:"Looks para eventos y día a día, con preparación de piel y fijación de larga duración."},
+            skincare:{title:"Cuidado de la Piel",desc:"Rutinas de limpieza, hidratación y tratamientos para una piel luminosa y sana."},
+            women:{title:"Todo para la Mujer",desc:"Accesorios, cofres regalo y asesoría de tonos personalizada."}},
+          brands:{title:"Marcas que amamos",note:"*Trabajamos con marcas cuidadosamente seleccionadas. Disponibilidad sujeta a temporada y stock."},
+          newsletter:{title:"Recibe nuestras ofertas",placeholder:"Tu email",subscribe:"Suscribirse",thanks:"¡Gracias! Te enviaremos nuestras ofertas."},
+          footer:{feztag:"Tu tienda de maquillaje en Fez"}},
+      en:{nav:{services:"Services",about:"About us",contact:"Contact"},
+          hero:{title:"Beauté – Make-up & Beauty in Fez",
+                tagline:"All the make-up of your dreams, at your store in Fez. Curated products and professional services to highlight your beauty."},
+          cta:{getOffers:"Get offers"},
+          services:{title:"Our Services",
+            makeup:{title:"Professional Make-up",desc:"Event and everyday looks, skin prep and long-lasting hold."},
+            skincare:{title:"Skin Care",desc:"Cleansing, hydration and treatments for a radiant, healthy skin."},
+            women:{title:"Everything for Women",desc:"Accessories, gift sets and personalised shade advice."}},
+          brands:{title:"Brands we love",note:"*We work with carefully selected brands. Availability depends on season and stock."},
+          newsletter:{title:"Get our offers",placeholder:"Your email",subscribe:"Subscribe",thanks:"Thanks! We’ll send you our offers."},
+          footer:{feztag:"Your make-up store in Fez"}},
+      fr:{nav:{services:"Services",about:"À propos",contact:"Contact"},
+          hero:{title:"Beauté – Maquillage & Beauté à Fès",
+                tagline:"Tout le maquillage de vos rêves, dans votre boutique à Fès. Produits sélectionnés et services professionnels pour sublimer votre beauté."},
+          cta:{getOffers:"Recevoir des offres"},
+          services:{title:"Nos Services",
+            makeup:{title:"Maquillage Professionnel",desc:"Looks pour événements et au quotidien, préparation de la peau et tenue longue durée."},
+            skincare:{title:"Soin de la peau",desc:"Nettoyage, hydratation et traitements pour une peau éclatante et saine."},
+            women:{title:"Tout pour la femme",desc:"Accessoires, coffrets cadeaux et conseil personnalisé des teintes."}},
+          brands:{title:"Marques que nous aimons",note:"*Nous travaillons avec des marques soigneusement sélectionnées. Disponibilités selon saison et stock."},
+          newsletter:{title:"Recevez nos offres",placeholder:"Votre email",subscribe:"S’abonner",thanks:"Merci ! Nous vous enverrons nos offres."},
+          footer:{feztag:"Votre boutique de maquillage à Fès"}},
+      ar:{nav:{services:"الخدمات",about:"من نحن",contact:"اتصال"},
+          hero:{title:"بوتيه — المكياج والجمال في فاس",
+                tagline:"كل مكياج أحلامك في متجرك بفاس. منتجات مختارة وخدمات احترافية لتبرز جمالك."},
+          cta:{getOffers:"استلم العروض"},
+          services:{title:"خدماتنا",
+            makeup:{title:"مكياج احترافي",desc:"إطلالات للمناسبات واليوميات مع تحضير البشرة وثبات طويل."},
+            skincare:{title:"العناية بالبشرة",desc:"تنظيف، ترطيب وعلاجات لبشرة صحية ومشرقة."},
+            women:{title:"كل ما يخص المرأة",desc:"إكسسوارات، هدايا واستشارات لاختيار الدرجات المناسبة."}},
+          brands:{title:"علامات نحبها",note:"*نعمل مع علامات مختارة بعناية. التوفر يعتمد على الموسم والمخزون."},
+          newsletter:{title:"استلم عروضنا",placeholder:"بريدك الإلكتروني",subscribe:"اشترك",thanks:"شكرًا لك! سنرسل إليك عروضنا."},
+          footer:{feztag:"متجرك للمكياج في فاس"}}
     };
 
-    const msgSubscribed = {
-      es:"¡Gracias! Te enviaremos nuestras ofertas.",
-      en:"Thanks! We’ll send you our offers.",
-      fr:"Merci ! Nous vous enverrons nos offres.",
-      ar:"شكراً لك! سنرسل لك عروضنا."
-    };
+    function getT(lang, key){
+      const parts = key.split('.');
+      let node = i18n[lang] || i18n.es;
+      for(const p of parts){ node = node?.[p]; }
+      return node ?? '';
+    }
+    function currentT(key){ return getT(document.documentElement.lang || 'es', key); }
 
-    let currentLang = localStorage.getItem('lang') || 'es';
-
-    function applyLang(lang){
-      currentLang = lang;
-      localStorage.setItem('lang', lang);
-
-      // RTL para árabe
-      document.body.classList.toggle('rtl', lang === 'ar');
+    function applyI18n(lang){
       document.documentElement.lang = lang;
       document.documentElement.dir  = (lang === 'ar') ? 'rtl' : 'ltr';
-
-      const t = i18n[lang];
       document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const keys = el.getAttribute('data-i18n').split('.');
-        let val = t;
-        keys.forEach(k=>val = val?.[k]);
-        if (typeof val === 'string') el.textContent = val;
+        const k = el.getAttribute('data-i18n');
+        el.textContent = getT(lang,k);
       });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const k = el.getAttribute('data-i18n-placeholder');
+        el.placeholder = getT(lang,k);
+      });
+      localStorage.setItem('beaute_lang', lang);
     }
 
-    document.querySelectorAll('.flag').forEach(btn=>{
-      btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
+    document.querySelectorAll('.flag-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>applyI18n(btn.dataset.lang));
     });
 
-    // Inicial
-    applyLang(currentLang);
+    document.getElementById('year').textContent = new Date().getFullYear();
+    applyI18n(localStorage.getItem('beaute_lang') || 'es');
   </script>
 </body>
 </html>
