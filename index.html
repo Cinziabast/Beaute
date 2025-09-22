@@ -1,234 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Beauté • Make Up & Beauty – Fez</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&family=Noto+Kufi+Arabic:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --pink:#f7a8c8; --pink2:#fcd3e3; --deep:#e34f8a; --text:#222; --muted:#666; --gold:#d4af37;
-}
-*{box-sizing:border-box}
-html,body{margin:0;background:#fff7fb;color:var(--text);font-family:Poppins,system-ui}
-body[dir="rtl"]{font-family:"Noto Kufi Arabic",Poppins,system-ui}
-.container{max-width:1150px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:20;background:#ffffffc9;backdrop-filter:blur(8px);border-bottom:1px solid #f2c7dc}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand img{width:44px;height:44px;border-radius:50%;border:2px solid #111;object-fit:cover}
-.brand span{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;letter-spacing:.2px}
-.menu{display:flex;gap:18px;align-items:center}
-.menu a{color:#333;text-decoration:none;font-weight:600}
-.menu a:hover{color:var(--deep)}
-.flags{display:flex;gap:6px}
-.flag{width:22px;height:14px;line-height:14px;border-radius:3px;border:1px solid #00000018;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:12px;background:#fff}
-.flag[aria-current="true"]{outline:2px solid var(--deep)}
-
-.hero{position:relative}
-.hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:56px 0}
-.hero-card{background:linear-gradient(135deg,#ffe0ee, #fff 60%);border:1px solid #f1c1da;border-radius:18px;padding:28px;box-shadow:0 16px 40px #e26da033}
-.hero h1{font-family:"Playfair Display",serif;font-size:42px;margin:0 0 10px}
-.hero p{margin:0 0 18px;color:#444}
-.cta{display:inline-block;background:var(--deep);color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700}
-.hero-img{border-radius:18px;overflow:hidden;min-height:280px;border:1px solid #f1c1da;box-shadow:0 10px 30px #e26da022}
-.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
-
-.section{padding:40px 0}
-.section h2{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#fff;border:1px solid #f1c5db;border-radius:16px;overflow:hidden;box-shadow:0 10px 20px #e26da014}
-.card img{width:100%;height:160px;object-fit:cover;display:block}
-.card .p{padding:16px}
-.card h3{margin:6px 0 6px;font-size:18px}
-.card p{margin:0;color:#555;font-size:14px}
-
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
-.about .blurb{background:#fff;border:1px solid #f1c5db;border-radius:16px;padding:22px}
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.collage img{width:100%;height:140px;object-fit:cover;border-radius:10px}
-
-.news{margin-top:16px;background:#fff;border:1px dashed #f0b1cf;border-radius:16px;padding:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-input[type=email]{flex:1;min-width:240px;padding:12px 14px;border:1px solid #eab8d1;border-radius:12px}
-button[type=submit]{background:#000;color:#fff;border:none;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
-
-footer{border-top:1px solid #f2c7dc;padding:28px 0;color:#666}
-
-@media (max-width:930px){
-  .hero-wrap,.about{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauté - Make Up & Beauty en Fez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff0f6;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .lang {
+      margin-left: 20px;
+    }
+    .lang img {
+      width: 25px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: linear-gradient(135deg, #f8a5c2, #f78fb3);
+      color: white;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 45%;
+      min-width: 280px;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+    }
+    .hero-text p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    .btn {
+      background-color: #e84393;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .hero-img img {
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .services {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 280px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .about, .contact {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #ffe3ed;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f78fb3;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#">
-      <img src="assets/logo.png" alt="Logo Beauté" onerror="this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop'">
-      <span>Beauté</span>
-    </a>
-    <nav class="menu">
-      <a href="#servicios" data-i18n="nav.products">Productos</a>
-      <a href="#servicios" data-i18n="nav.services">Servicios</a>
-      <a href="#about" data-i18n="nav.about">Sobre nosotros</a>
-      <a href="#ofertas" class="cta" data-i18n="nav.cta">Recibir ofertas</a>
+  <header>
+    <img src="assets/logo.png.png" alt="Beauté Logo">
+    <nav>
+      <a href="#services">Servicios</a>
+      <a href="#about">Sobre nosotros</a>
+      <a href="#contact">Contacto</a>
+      <span class="lang">
+        <img src="https://flagcdn.com/w20/gb.png" alt="English">
+        <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+        <img src="https://flagcdn.com/w20/ma.png" alt="العربية">
+      </span>
     </nav>
-    <div class="flags" aria-label="Idiomas">
-      <button class="flag" data-lang="en" aria-current="false">🇬🇧</button>
-      <button class="flag" data-lang="fr" aria-current="true">🇫🇷</button>
-      <button class="flag" data-lang="ar" aria-current="false">🇲🇦</button>
-    </div>
-  </div>
-</header>
+  </header>
 
-<main>
   <section class="hero">
-    <div class="container hero-wrap">
-      <div class="hero-card">
-        <h1 data-i18n="hero.title">Beauté – Make Up & Beauty en Fez</h1>
-        <p data-i18n="hero.subtitle">Maquillaje profesional, cuidado de la piel y todo para la mujer. Descubre productos seleccionados y servicios que realzan tu belleza.</p>
-        <a href="#ofertas" class="cta" data-i18n="hero.cta">Recibir ofertas</a>
+    <div class="hero-text">
+      <h1>Beauté – Maquillaje & Belleza en Fez</h1>
+      <p>Maquillaje profesional, cuidados de la piel y todo para la mujer. Productos y servicios seleccionados para resaltar tu belleza.</p>
+      <a href="#contact" class="btn">Recibir ofertas</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1583241801167-1d51f2fb8c1d?q=80&w=800&auto=format&fit=crop" alt="Brochas de maquillaje elegantes">
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Maquillaje Profesional</h3>
+        <p>Para ocasiones especiales y uso diario.</p>
       </div>
-      <div class="hero-img">
-        <img src="assets/hero.jpg"
-             alt="Make up en Fez"
-             onerror="this.src='https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop'">
+      <div class="card">
+        <h3>Cuidado de la Piel</h3>
+        <p>Productos para un rostro radiante y saludable.</p>
+      </div>
+      <div class="card">
+        <h3>Todo para la Mujer</h3>
+        <p>Maquillaje, accesorios y más.</p>
       </div>
     </div>
   </section>
 
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2 data-i18n="services.title">Nuestros servicios y categorías</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/makeup.jpg" alt="Maquillaje"
-               onerror="this.src='https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop'">
-          <div class="p">
-            <h3 data-i18n="cards.makeup.title">Maquillaje</h3>
-            <p data-i18n="cards.makeup.text">Bases, labiales, sombras, brochas y más para un look impecable.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/skincare.jpg" alt="Cuidado de la piel"
-               onerror="this.src='https://images.unsplash.com/photo-1512203492609-8f76f54d0b52?q=80&w=1200&auto=format&fit=crop'">
-          <div class="p">
-            <h3 data-i18n="cards.skincare.title">Cuidado de la piel</h3>
-            <p data-i18n="cards.skincare.text">Limpieza, hidratación y tratamientos para una piel luminosa y sana.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="assets/women.jpg" alt="Todo para la mujer"
-               onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop'">
-          <div class="p">
-            <h3 data-i18n="cards.woman.title">Todo para la mujer</h3>
-            <p data-i18n="cards.woman.text">Accesorios, sets de regalo y asesoría de tonos personalizada.</p>
-          </div>
-        </article>
-      </div>
-    </div>
+  <section class="about" id="about">
+    <h2>Sobre Nosotros</h2>
+    <p>En Beauté creemos que la belleza es un arte. Nuestra misión es ofrecer maquillaje, productos de cuidado y accesorios de alta calidad para realzar lo mejor de ti.</p>
   </section>
 
-  <section id="about" class="section">
-    <div class="container about">
-      <div class="blurb">
-        <h2 data-i18n="about.title">Sobre nosotros</h2>
-        <p data-i18n="about.text1">
-          En Beauté creemos que el maquillaje es un arte y cada rostro es único. Seleccionamos marcas y productos que combinan calidad, seguridad y tendencias, con asesoría cercana para ayudarte a elegir lo que realmente te favorece.
-        </p>
-        <p data-i18n="about.text2">
-          En nuestra tienda en Fez encontrarás maquillaje para eventos, rutinas de skincare a medida y todo lo necesario para tu ritual de belleza diario. Nuestro objetivo: que te mires al espejo y digas “¡wow!”.
-        </p>
-        <ul style="margin:10px 0 0; padding-left:18px; color:#444">
-          <li data-i18n="about.li1">Maquillaje para bodas, fiestas y sesiones.</li>
-          <li data-i18n="about.li2">Diagnóstico rápido de tipo de piel y tonos.</li>
-          <li data-i18n="about.li3">Packs y regalos listos para sorprender.</li>
-        </ul>
-      </div>
-      <div class="collage">
-        <img src="https://images.unsplash.com/photo-1510414696678-2415ad8474aa?q=80&w=800&auto=format&fit=crop" alt="">
-        <img src="https://images.unsplash.com/photo-1518112166137-85f9979a43a5?q=80&w=800&auto=format&fit=crop" alt="">
-        <img src="https://images.unsplash.com/photo-1520975922323-9ab2f3f0e1f3?q=80&w=800&auto=format&fit=crop" alt="">
-        <img src="https://images.unsplash.com/photo-1582092724761-5d4e9a3a3c1a?q=80&w=800&auto=format&fit=crop" alt="">
-      </div>
-    </div>
+  <section class="contact" id="contact">
+    <h2>Recibe nuestras ofertas</h2>
+    <form>
+      <input type="email" placeholder="Tu email" required style="padding:10px; border-radius:8px; border:1px solid #ccc; width:250px;">
+      <button type="submit" class="btn">Suscribirse</button>
+    </form>
   </section>
 
-  <section id="ofertas" class="section">
-    <div class="container news">
-      <strong data-i18n="newsletter.title">Recibe ofertas y novedades</strong>
-      <form method="POST" action="https://formspree.io/f/your-endpoint" id="offerForm" style="display:flex;gap:10px;flex:1;flex-wrap:wrap">
-        <input type="email" name="email" placeholder="email@example.com" required>
-        <button type="submit" data-i18n="newsletter.button">Suscribirme</button>
-      </form>
-      <small id="formMsg" style="display:none;color:#0a7b44" data-i18n="newsletter.success">¡Gracias! Revisa tu bandeja para confirmar la suscripción.</small>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-    <div>© <span id="year"></span> Beauté • Fez</div>
-    <div data-i18n="footer.rights">Todos los derechos reservados</div>
-  </div>
-</footer>
-
-<script>
-const i18n = {
-  en:{nav:{products:"Products",services:"Services",about:"About",cta:"Get offers"},
-      hero:{title:"Beauté – Make Up & Beauty in Fez",subtitle:"Professional makeup, skincare and everything for women. Curated products and services to highlight your beauty.",cta:"Get offers"},
-      services:{title:"Our services & categories"},
-      cards:{makeup:{title:"Makeup",text:"Foundations, lipsticks, eyeshadows, brushes and more."},
-             skincare:{title:"Skincare",text:"Cleansing, hydration and treatments for radiant, healthy skin."},
-             woman:{title:"Everything for women",text:"Accessories, gift sets and tone-matching advice."}},
-      about:{title:"About us",
-             text1:"We believe makeup is an art and every face is unique. We curate brands that combine quality, safety and trends, with friendly advice to help you choose what truly suits you.",
-             text2:"In our Fez store you'll find event makeup, tailored skincare routines and everything for your daily beauty ritual. Our goal: look in the mirror and say 'wow!'",
-             li1:"Makeup for weddings, parties and shoots.", li2:"Quick skin type & shade matching.", li3:"Packs & ready-to-gift sets."},
-      newsletter:{title:"Get deals & news",button:"Subscribe",success:"Thanks! Check your inbox to confirm."},
-      footer:{rights:"All rights reserved"}},
-  fr:{nav:{products:"Produits",services:"Services",about:"À propos",cta:"Recevoir des offres"},
-      hero:{title:"Beauté – Maquillage & Beauté à Fès",subtitle:"Maquillage professionnel, soins de la peau et tout pour la femme. Produits et services sélectionnés pour sublimer votre beauté.",cta:"Recevoir des offres"},
-      services:{title:"Nos services & catégories"},
-      cards:{makeup:{title:"Maquillage",text:"Fonds de teint, rouges à lèvres, fards, pinceaux et plus."},
-             skincare:{title:"Soin de la peau",text:"Nettoyage, hydratation et traitements pour une peau éclatante."},
-             woman:{title:"Tout pour la femme",text:"Accessoires, coffrets cadeaux et conseil de teintes."}},
-      about:{title:"À propos",
-             text1:"Nous croyons que le maquillage est un art et que chaque visage est unique. Nous sélectionnons des marques alliant qualité, sécurité et tendances, avec un conseil proche et personnalisé.",
-             text2:"À Fès, retrouvez maquillage événementiel, routines skincare sur mesure et tout pour votre rituel beauté quotidien.",
-             li1:"Maquillage pour mariages, fêtes et shootings.", li2:"Diagnostic rapide du type de peau et des teintes.", li3:"Coffrets prêts à offrir."},
-      newsletter:{title:"Recevez offres & nouveautés",button:"S'abonner",success:"Merci ! Vérifiez votre email pour confirmer."},
-      footer:{rights:"Tous droits réservés"}},
-  ar:{nav:{products:"المنتجات",services:"الخدمات",about:"من نحن",cta:"استقبال العروض"},
-      hero:{title:"بيوتي – مكياج وجمال في فاس",subtitle:"مكياج احترافي، عناية بالبشرة وكل ما يهم المرأة. منتجات وخدمات مختارة لإبراز جمالك.",cta:"استقبال العروض"},
-      services:{title:"خدماتنا وفئاتنا"},
-      cards:{makeup:{title:"مكياج",text:"كريمات أساس، أحمر شفاه، ظلال، فُرش والمزيد."},
-             skincare:{title:"العناية بالبشرة",text:"تنظيف، ترطيب وعلاجات لبشرة مشرقة وصحية."},
-             woman:{title:"كل ما يخص المرأة",text:"إكسسوارات، هدايا جاهزة وتوافق الدرجات."}},
-      about:{title:"من نحن",
-             text1:"نؤمن أن المكياج فن وأن كل وجه فريد. نختار علامات تجمع الجودة والأمان والموضة مع نصيحة قريبة وشخصية.",
-             text2:"في متجرنا بفاس تجدين مكياج المناسبات وروتينات بشرة مخصصة وكل ما يلزم لطقوس الجمال اليومية.",
-             li1:"مكياج للأعراس والمناسبات والتصوير.", li2:"تشخيص سريع لنوع البشرة وتوافق الدرجات.", li3:"علب هدايا جاهزة."},
-      newsletter:{title:"اشتركي لتصلك العروض والأخبار",button:"اشتراك",success:"شكرًا لكِ! تحققي من بريدك للتأكيد."},
-      footer:{rights:"جميع الحقوق محفوظة"}}
-};
-const nodes = document.querySelectorAll("[data-i18n]");
-const flags = document.querySelectorAll(".flag");
-function applyLang(lang){
-  const dict = i18n[lang] || i18n.fr;
-  nodes.forEach(n=>{
-    const path=n.dataset.i18n.split(".");
-    let v=dict; path.forEach(k=>{if(v) v=v[k]});
-    if(typeof v==="string") n.textContent=v;
-  });
-  if(lang==="ar"){document.body.dir="rtl"; document.documentElement.lang="ar";}
-  else{document.body.dir="ltr"; document.documentElement.lang=lang;}
-  flags.forEach(f=>f.setAttribute("aria-current", String(f.dataset.lang===lang)));
-}
-flags.forEach(f=>f.addEventListener("click",()=>applyLang(f.dataset.lang)));
-applyLang("fr");
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("offerForm").addEventListener("submit",e=>{e.preventDefault();document.getElementById("formMsg").style.display="inline"});
-</script>
+  <footer>
+    <p>© 2025 Beauté - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
