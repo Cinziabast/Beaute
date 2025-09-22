@@ -91,11 +91,20 @@
     }
     .card {
       background: white;
-      padding: 20px;
+      padding: 0;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 280px;
+      overflow: hidden;
       transition: transform 0.3s;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -143,16 +152,25 @@
     <h2>Nuestros Servicios</h2>
     <div class="cards">
       <div class="card">
-        <h3>Maquillaje Profesional</h3>
-        <p>Para ocasiones especiales y uso diario.</p>
+        <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=800&auto=format&fit=crop" alt="Maquillaje">
+        <div class="card-content">
+          <h3>Maquillaje Profesional</h3>
+          <p>Para ocasiones especiales y uso diario.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>Cuidado de la Piel</h3>
-        <p>Productos para un rostro radiante y saludable.</p>
+        <img src="https://images.unsplash.com/photo-1585238341986-1401f1e8d3d7?q=80&w=800&auto=format&fit=crop" alt="Cuidado de la piel">
+        <div class="card-content">
+          <h3>Cuidado de la Piel</h3>
+          <p>Productos para un rostro radiante y saludable.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>Todo para la Mujer</h3>
-        <p>Maquillaje, accesorios y más.</p>
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222d1caa74?q=80&w=800&auto=format&fit=crop" alt="Todo para la mujer">
+        <div class="card-content">
+          <h3>Todo para la Mujer</h3>
+          <p>Maquillaje, accesorios y más.</p>
+        </div>
       </div>
     </div>
   </section>
